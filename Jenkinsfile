@@ -16,7 +16,7 @@ pipeline {
                 rm -rf mainrepo
                 '''
             }}
-      stage('Clone mainrepo first,  later subrepo') {
+      stage('Clone mainrepo and subrepo using recursive') {
             steps {  
                 sh'''
                 git clone --recurse-submodules https://github.com/Gautham-kukutla/mainrepo.git
