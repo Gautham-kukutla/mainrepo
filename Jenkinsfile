@@ -35,10 +35,11 @@ pipeline {
                         sh '''
                         rm -rf demo
                         mkdir demo
+                        cd demo
                                '''
                         unstash 'myfiles'
                         sh '''
-                        cd demo
+                        
                         ls'''
                         
     }}
