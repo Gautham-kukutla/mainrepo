@@ -21,7 +21,7 @@ pipeline {
       stage('Clone mainrepo and subrepo using recursive') {
             steps {  
                 sh '''
-                git clone --recurse-submodules 'https://github.com/Gautham-kukutla/mainrepo.gi'
+                git clone --recurse-submodules 'https://github.com/Gautham-kukutla/mainrepo.git'
                 cd mainrepo/subrepo
                 pwd
                 ls
