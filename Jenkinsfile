@@ -17,7 +17,6 @@ pipeline {
                 stash includes: '*', name: 'myfiles'
                 sh '''cd ../../
                 rm -rf mainrepo '''
-                '''
             }}
       stage('Clone mainrepo and subrepo using recursive') {
             steps {  
@@ -40,3 +39,4 @@ pipeline {
                               rm -rf demo'''
                         
     }}
+}}
