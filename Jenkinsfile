@@ -40,7 +40,7 @@ pipeline {
                         unstash 'myfiles'
                         }
                         sh '''                        
-                        ls'''
+                        ls demo/'''
                         
     }}
 }}
