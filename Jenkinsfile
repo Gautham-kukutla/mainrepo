@@ -13,10 +13,9 @@ pipeline {
                 pwd
                 ls 
                 '''
-
-                stash includes: 'subrepo/*', name: 'myfiles'
-                sh '''cd ../../
-               '''
+                dir( './mainrepo/subrepo/' ) {
+                stash includes: '*', name: 'myfiles'
+                }
             }}
       stage('Clone mainrepo and subrepo using recursive') {
             steps {  
@@ -37,7 +36,9 @@ pipeline {
                         mkdir demo
                         cd demo
                                '''
+                        dir( './demo/' ) {
                         unstash 'myfiles'
+                        }
                         sh '''                        
                         ls'''
                         
