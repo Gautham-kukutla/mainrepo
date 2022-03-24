@@ -32,12 +32,12 @@ pipeline {
             }}
             stage('unstashing') {
                 steps { 
-                        sh '''mkdir demo
+                        sh '''
+                        rm -rf demo
+                        mkdir demo
                               cd demo '''
                         unstash 'myfiles'
-                        sh '''ls
-                              cd ..
-                              rm -rf demo'''
+                        sh 'ls'
                         
     }}
 }}
