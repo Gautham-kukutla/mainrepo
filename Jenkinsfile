@@ -14,7 +14,7 @@ pipeline {
                 ls 
                 '''
 
-                stash includes: '*', name: 'myfiles'
+                stash includes: 'subrepo/*', name: 'myfiles'
                 sh '''cd ../../
                '''
             }}
@@ -38,8 +38,7 @@ pipeline {
                         cd demo
                                '''
                         unstash 'myfiles'
-                        sh '''
-                        
+                        sh '''                        
                         ls'''
                         
     }}
