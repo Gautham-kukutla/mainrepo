@@ -34,7 +34,6 @@ pipeline {
                         sh '''
                         rm -rf demo
                         mkdir demo
-                        cd demo
                                '''
                         dir( './demo/' ) {
                         unstash 'myfiles'
